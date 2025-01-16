@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+  <title>Login Page</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.9/angular.min.js"></script>
+  <link href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-image: url("img/bgau2.gif");
+      background-repeat: no-repeat;
+      background-size: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+
+    .login-container {
+      max-width: 400px;
+      width: 100%;
+      background-color: #fff;
+      padding: 50px;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      box-sizing: border-box;
+    }
+
+    .logo {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .logo img {
+      width: 150px;
+      height: 100px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+      position: relative;
+    }
+
+    .form-group label {
+      display: none;
+    }
+
+    .form-group .fa-icon {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 10px;
+      color: #666;
+    }
+
+    .form-group input {
+      width: calc(100% - 20px);
+      padding: 10px;
+      padding-left: 40px;
+      box-sizing: border-box;
+    }
+
+    .icon-eye {
+      position: absolute;
+      top: 50%;
+      right: 10px;
+      transform: translateY(-50%);
+      cursor: pointer;
+    }
+
+    .icon-eye i {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      right: 30px;
+      color: #666;
+      cursor: pointer;
+    }
+
+    .btn-container {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .btn-ok {
+      background-color: #142bc1;
+      color: #fff;
+      border: none;
+      margin-top: 10px;
+      border-radius: 3px;
+    }
+
+    .btn-cancel {
+      background-color: #ea0c0c;
+      color: #fff;
+      border: none;
+      margin-left: 10px;
+      border-radius: 3px;
+    }
+  </style>
+</head>
+
+<body ng-controller="loginController">
+
+  <div class="login-container">
+    <div class="logo">
+      <img src="img/logo.png" alt="Logo">
+    </div>
+    <h2>Kelompok Ng-Igo</h2>
+    <div class="form-group">
+      <i class="fas fa-user fa-icon"></i>
+      <label for="username">Username:</label>
+      <input type="text" id="username" ng-model="username" placeholder="Enter your username">
+    </div>
+    <div class="form-group">
+      <i class="fas fa-lock fa-icon"></i>
+      <label for="password">Password:</label>
+      <input type="password" id="password" ng-model="password" placeholder="Enter your password">
+      <div class="icon-eye" ng-click="togglePassword()">
+        <i ng-class="{'fas fa-eye': passwordVisible, 'fas fa-eye-slash': !passwordVisible}"></i>
+      </div>
+    </div>
+    <div class="btn-container">
+      <button class="btn-ok" ng-click="login()">OK</button>
+      <button class="btn-cancel" ng-click="cancel()">Cancel</button>
+    </div>
+  </div>
+
+  <script>
+    var app = angular.module('myApp', []);
+
+    app.controller('loginController', function ($scope, $window) {
+      $scope.passwordVisible = false; // Initialize password visibility
+
+      $scope.login = function () {
+        console.log('Login clicked');
+        // Store the username in localStorage
+        localStorage.setItem('username', $scope.username);
+        // Navigasi ke halaman index.html
+        $window.location.href = 'index.html';
+      };
+
+      $scope.cancel = function () {
+        console.log('Cancel clicked');
+        // Menghapus username dan password
+        $scope.username = '';
+        $scope.password = '';
+      };
+
+      $scope.togglePassword = function () {
+        var passwordInput = document.getElementById('password');
+        passwordInput.type = $scope.passwordVisible ? 'password' : 'text';
+        $scope.passwordVisible = !$scope.passwordVisible;
+      };
+    });
+  </script>
+
+</body>
+
+</html>

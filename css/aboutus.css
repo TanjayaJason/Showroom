@@ -1,0 +1,295 @@
+* {
+    list-style-type: none;
+    text-decoration: none;
+}
+
+h1,h2,h3,ul,li{
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto Condensed';
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    background: #333;
+}
+
+/* aboutus.css */
+nav {
+    position: fixed;
+    font-weight: bold;
+    z-index: 9999999;
+    width: 100%;
+    height: 100px; /* Warna putih dengan tingkat kejelasan (opacity) 0.5 */
+    backdrop-filter: blur(5px); /* Efek blur dengan nilai 10px (sesuaikan sesuai keinginan Anda) */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+    border-bottom: 1px rgba(0, 0, 0, 0.134) solid;
+  }
+  
+  #logo {
+    width: 30%;
+    height: 90px;
+    float: left;
+    display: flex;
+    vertical-align: middle;
+    margin-right: 15px;
+  }
+
+  #logo img {
+    width: auto;
+    align-items: center;
+    height: auto;
+    padding: 15px;
+  }
+  
+  #mainmenu {
+    flex: 0.6; /* Menggunakan flex untuk memberikan sisa ruang pada navbar */
+    height: 60px;
+    float: right;
+    display: flex;
+    text-align: center;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  #mainmenu li {
+    width: 30%;
+    text-align: center; /* Change the font-weight to bold */
+  }
+
+  #mainmenu li a {
+    font-size: 20px;
+  }
+  
+  nav a {
+    color: white;
+    font-size: 16px;
+    opacity: .8;
+    transition: color 0.4s;
+  }
+  
+  nav a:hover {
+    color: lightcoral;
+    transition: .4s;
+  }
+  
+  nav a:active, nav .active a:link, nav .active a:visited {
+    color: lightcoral;
+    text-shadow: none !important;
+  }
+  
+  #profil {
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+    color: white;
+    opacity: .8;
+    font-size: 20px;
+  }
+  
+  #profil i {
+    margin-right: 10px;
+    color:white;
+  }
+
+  #profile-button {
+    font-size: 20px;
+    font-weight: bold;
+    font-family: 'Roboto Condensed';
+    background-color: transparent; /* Set the background color to transparent */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  
+  #profile-button:hover,
+  #profile-box:hover {
+    background-color: #bd1a1d; /* Change the background color on hover */
+  }
+  
+#profile-button i {
+    margin-right: 10px;
+  }
+  
+  #profile-box {
+    position: absolute;
+    top: 80px;
+    right: 0;
+    background-color: #333; /* Match the color with the navbar */
+    border: 1px solid #333;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    display: none; /* Hide initially */
+  }
+  
+ #profile-box span {
+    margin-bottom: 5px;
+    /* display: block; */
+    color: white; /* Set text color to white */
+    font-family: 'Roboto Condensed';
+  }
+  
+  #profile-box button {
+    font-family: 'Roboto Condensed';
+    background-color: #333;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+  }
+  
+  #profile-box button:hover {
+    background-color: silver;
+    color: #333;
+  }
+  
+  /* Add style for logout button icon */
+  #profile-box button i {
+    margin-right: 7px;
+  }
+  
+  #profile-box button.logout i {
+    margin-right: 5px;
+  }
+  
+  /* Show profile-box when #profile-button is hovered or clicked */
+  #profile-button:hover + #profile-box,
+  #profile-box:hover {
+    display: block;
+  }
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around; /* Menggunakan space-around agar lebih rapi */
+    background-color: #333;
+    padding: 120px 20px 20px;
+    box-sizing: border-box;
+}
+
+.card {
+    width: 300px;
+    margin: 10px;
+    border-radius: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background-color: white;
+    transition: all 0.3s;
+    text-align: center;
+    position: relative;
+}
+
+.card-content{
+  font-weight: bold;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 20px gold;
+}
+
+.card-image {
+    position: relative;
+    height: 260px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin: 0 auto;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.card-content {
+    padding: 10px;
+}
+
+.card-footer {
+    padding: 10px;
+    text-align: center;
+}
+
+h2 {
+    margin-bottom: 5px;
+}
+
+.more {
+    margin-top: 10px;
+}
+
+.card:hover .more {
+    display: block;
+}
+
+button {
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.4s;
+}
+
+button:hover {
+    background-color: silver;
+    color: #333;
+}
+
+.footer {
+    position: absolute;
+    width: 100%;
+    background-color: #111;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    margin: 50px auto;
+    flex: 1;
+    display: flex;
+}
+
+.footer ul {
+    justify-content: space-between; /* This will evenly distribute the columns */
+    padding-left: 7em;
+    height: auto;
+    text-align: left;
+    width: 30em;
+}
+
+.footer ul li h1,
+h1 {
+    color: silver;
+    font-size: 18px;
+    padding-bottom: 10px;
+}
+
+.footer ul li a {
+    font-size: 15px;
+    color: grey;
+    display: block;
+}
+
+.footer ul li a:hover {
+    color: #bd1a1d;
+}
